@@ -1,12 +1,12 @@
 cd packages/backend
-zip -q -r build.zip build package.json
-mv build.zip ../..
+zip -q -r auth_build.zip build package.json
+mv auth_build.zip ../..
 cd ../..
-mkdir build
-unzip build.zip -d ./build
-cd build
+mkdir auth_build
+unzip auth_build.zip -d ./auth_build
+cd auth_build
 yarn install
-zip -q -r build.zip build package.json node_modules
-mv build.zip ../
+zip -q -r auth_build.zip build package.json node_modules
+mv auth_build.zip ../
 cd ../
-rm -rf build
+rm -rf auth_build

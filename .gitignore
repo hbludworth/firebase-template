@@ -134,6 +134,8 @@ build
 dist
 .vscode
 build.zip
+auth_build
+auth_build.zip
 
 #Vue
 # Logs
