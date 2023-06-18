@@ -1,8 +1,8 @@
 import { MongoClient } from 'mongodb';
 
-const userName = process.env.MONGOUSER;
-const password = process.env.MONGOPASSWORD;
-const hostname = process.env.MONGOHOSTNAME;
+const userName = process.env.MONGOUSER_FB;
+const password = process.env.MONGOPASSWORD_FB;
+const hostname = process.env.MONGOHOSTNAME_FB;
 
 if (!userName || !password || !hostname) {
   throw Error('Database not configured. Set environment variables.');
