@@ -1,7 +1,7 @@
 import * as admin from 'firebase-admin';
 
 export function initializeFirebase(cb: (err?: any) => void) {
-  const jsonCredentials = process.env.FIREBASE_CREDENTIALS;
+  const jsonCredentials = process.env.FIREBASE_CREDENTIALS_FB;
 
   if (!jsonCredentials) {
     cb('No Firebase credentials found');
