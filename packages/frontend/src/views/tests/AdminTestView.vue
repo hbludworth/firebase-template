@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="section has-text-centered is-medium">
+  <section class="section has-text-centered is-large">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-three-fifths">

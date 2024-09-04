@@ -16,7 +16,7 @@ Before you can run the project locally, there are a few things you need to do. A
 
 First, you must add your public Firebase configuration object to the frontend code. This can be found at `/packages/frontend/src/firebase.ts`. This will allow for your frontend app to properly manage user sessions, refresh tokens, etc.
 
-Next, you must provide the backend code with your private Firebase configuration JSON file. This should be done in a way that keeps the code private so that it is not committed to a publicly-accessible repository. This can be added to the backend firebase configuration file found at `/packages/backend/src/firebase.ts`. In the template, I have opted to store the private JSON file in a private AWS S3 bucket. It is retrieved by the server on startup using the command line's current AWS profile. You can choose to implement the private JSON configuration object however you wish.
+Next, you must provide the backend code with your private Firebase configuration JSON file. This should be done in a way that keeps the code private so that it is not committed to a publicly-accessible repository. This can be added to the backend firebase configuration file found at `/packages/backend/src/firebase.ts`. In the template, I have opted to store the configuration as an environment variable in the `.env` file, but you can choose to implement the private JSON configuration object however you wish.
 
 Finally, you must add connection details for your MongoDB database. In the file found at `/packages/backend/src/connection.ts` you can see that the MongoDB username, password, and hostname are accessed via environment variables. For your purposes, make sure to provide environment variables using `.env` files or some other method. These details should be kept private.
 
@@ -28,14 +28,14 @@ Now that you have everything configured, running the project is easy.
 
 First, run `yarn install` to download all necessary packages.
 
-Next, simply run `yarn start`. This will serve both the frontend Vue 3 app and the backend Node.js + Express server. Both servers will be hot-reloaded when changes are made.
+Next, simply run `yarn start:dev`. This will serve both the frontend Vue 3 app and the backend Node.js + Express server. Both servers will be hot-reloaded when changes are made.
 
 ### Building for Production
 
 Should you wish to build the project and deploy to production, the process is extremely easy.
 
-First, run `yarn build` to build the TypeScript types, the Vue app, and the Node.js server files.
+First, run `yarn install` to download the necessary packages.
 
-Next, run `yarn zip`. This will create a `build.zip` file at the root directory containing all of the code necessary to run in production, including all necessary node modules.
+Next, run `yarn build` to build the TypeScript types, the Vue app, and the Node.js server files.
 
-Simply deploy the `build.zip` file to your hosting provider of choice and you should see the production version of the app.
+Finally, run `yarn start`. This will run a production version of the app.
