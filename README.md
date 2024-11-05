@@ -16,9 +16,9 @@ Before you can run the project locally, there are a few things you need to do. A
 
 First, you must add your public Firebase configuration object to the frontend code. This can be found at `/packages/frontend/src/firebase.ts`. This will allow for your frontend app to properly manage user sessions, refresh tokens, etc.
 
-Next, you must provide the backend code with your private Firebase configuration JSON file. This should be done in a way that keeps the code private so that it is not committed to a publicly-accessible repository. This can be added to the backend firebase configuration file found at `/packages/backend/src/firebase.ts`. In the template, I have opted to store the configuration as an environment variable in the `.env` file, but you can choose to implement the private JSON configuration object however you wish.
+Next, you must provide the backend code with your private Firebase configuration JSON file. This should be done in a way that keeps the code private so that it is not committed to a publicly-accessible repository. This can be added to the backend firebase configuration file found at `/packages/backend/src/firebase.ts`. In the template, I have opted to store the configuration as a stringified JSON in an environment variable in an `.env` file within the `/packages/backend` directory, but you can choose to implement the private JSON configuration object however you wish.
 
-Finally, you must add connection details for your MongoDB database. In the file found at `/packages/backend/src/connection.ts` you can see that the MongoDB username, password, and hostname are accessed via environment variables. For your purposes, make sure to provide environment variables using `.env` files or some other method. These details should be kept private.
+Finally, you must add connection details for your MongoDB database. In the file found at `/packages/backend/src/connection.ts` you can see that the MongoDB username, password, and hostname are accessed via environment variables. For your purposes, make sure to provide environment variables using an `.env` file or some other method. These details should be kept private.
 
 Once these adjustments have been made, you are ready to run your own local version of the template application.
 

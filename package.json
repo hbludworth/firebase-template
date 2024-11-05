@@ -14,7 +14,7 @@
     "server": "yarn workspace backend dev",
     "client": "yarn workspace frontend dev",
     "zip": "./zip.sh",
-    "start": "yarn install && yarn build && yarn workspace backend start"
+    "start": "yarn workspace backend start"
   },
   "dependencies": {
     "concurrently": "^8.1.0"

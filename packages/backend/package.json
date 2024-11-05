@@ -7,7 +7,7 @@
     "build": "rm -rf build && tsc",
     "postbuild": "ef-tspm",
     "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register ./src/server.ts --respawn --transpileOnly",
-    "start": "NODE_ENV=production nohup node ./build/src/server.js &"
+    "start": "NODE_ENV=production node ./build/src/server.js"
   },
   "devDependencies": {
     "@ef-carbon/tspm": "^2.2.5",
